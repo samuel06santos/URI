@@ -1,0 +1,43 @@
+using System;
+ class Program {
+    static void Main(){
+        decimal input = Convert.ToDecimal(Console.ReadLine());
+       long r,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11;
+        r = (long)input /100;
+        input -= r *100;
+        r1 = (long)input /50;
+        input -= r1 *50;
+        r2 = (long)input /20;
+        input -= r2 *20;
+        r3 = (long)input /10;
+        input -= r3 *10;
+        r4 = (long)input /5;
+        input -= r4 *5;
+        r5 = (long)input /2;
+        input -= r5 *2;
+        r6 = (long)input /1;
+        input -= r6 *1;
+        long inp = Convert.ToInt64(input *100M);
+        r7 = inp /50;
+        inp -= r7 *50;
+        r8 = inp /25;
+        inp -= r8 *25;
+        r9 = inp /10;
+        inp -= r9 *10;
+        r10 = inp /5;
+        inp -= r10 *5;
+        r11 = inp /1;
+    Console.Write("NOTAS:\n");
+    Console.Write(r + " nota(s) de R$ 100.00\n");
+    Console.Write(r1 + " nota(s) de R$ 50.00\n");
+    Console.Write(r2 + " nota(s) de R$ 20.00\n");
+    Console.Write(r3 + " nota(s) de R$ 10.00\n");
+    Console.Write(r4 + " nota(s) de R$ 5.00\n");
+    Console.Write(r5 + " nota(s) de R$ 2.00\n");
+    Console.Write("MOEDAS:\n");
+    Console.Write(r6 + " moeda(s) de R$ 1.00\n");
+    Console.Write(r7 + " moeda(s) de R$ 0.50\n");
+    Console.Write(r8 + " moeda(s) de R$ 0.25\n");
+    Console.Write(r9 + " moeda(s) de R$ 0.10\n");
+    Console.Write(r10 + " moeda(s) de R$ 0.05\n");
+    Console.Write(r11 + " moeda(s) de R$ 0.01\n");}}
