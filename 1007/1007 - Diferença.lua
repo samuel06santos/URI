@@ -1,0 +1,5 @@
+a = io.read("*n")
+b = io.read("*n")
+c = io.read("*n")
+d = io.read("*n")
+print("DIFERENCA = "..string.format((a*b)-(c*d)))
