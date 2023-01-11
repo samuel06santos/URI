@@ -1,0 +1,1 @@
+io.write(io.read("*n")*2," minutos\n")
