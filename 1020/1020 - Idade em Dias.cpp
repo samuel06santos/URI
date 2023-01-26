@@ -6,6 +6,6 @@ int main() {
     age %= 365;
     printf("%d mes(es)\n", age/30);
     age %= 30;
-    printf("%d dias(s)\n", age);
+    printf("%d dia(s)\n", age);
     return 0;
 }
