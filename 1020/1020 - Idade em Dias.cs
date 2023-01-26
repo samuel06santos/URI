@@ -7,7 +7,7 @@ class Program
         int age = int.Parse(Console.ReadLine());
         Console.WriteLine($"{age/365} ano(s)");
         age %= 365;
-        Console.WriteLine($"{age/30} mes(s)");
+        Console.WriteLine($"{age/30} mes(es)");
         age %= 30;
         Console.WriteLine($"{age} dia(s)");
     }
