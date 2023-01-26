@@ -5,6 +5,6 @@ int main() {
     h = sec/3600; h2 = sec % 3600;
     m = h2/60; m2 = h2 % 60;
     s = m2 % 60;
-    printf("%d:%d:%d", h, m, s);
+    printf("%d:%d:%d\n", h, m, s);
     return 0;
 }
