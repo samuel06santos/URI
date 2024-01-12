@@ -1,27 +1,19 @@
-def CPF(num:str) -> None:
-    sum, validacao = 0, 0
-    for i in range(10,1,-1):
-        sum += int(num[10-i]) * i
-    
-    validacao = 11 - (sum % 11)
-    validacao =  0 if validacao > 9 else validacao
-    
-    if validacao == int(num[9]):
-        sum = 0
-        for j in range(11,1,-1):
-            sum += int(num[11-j]) * j
-    
-        validacao = 11 - (sum % 11)
-        validacao = 0 if validacao > 9 else validacao
-        
-        if validacao == int(num[10]):
-            print("CPF valido")
-            
-        else: print("CPF invalido")
-    else: print("CPF invalido")
-    
-from re import sub
-cpf = lambda string: CPF(sub("[-.\s]", "",string))
-for i in range(10_000):
-    try:cpf(input())
-    except EOFError: break
+def validar_CPF(cpf:str) -> str:
+    cpf_dvs = (cpf[-2], cpf[-1]) # digitos verificadores
+    pre_cpf : str = cpf[:3]+cpf[4:7]+cpf[8:11] # os 9 numeros do cpf
+
+    result_sum1 : int = sum([ int(i)*e for e, i in enumerate(pre_cpf, 1) ])
+    b1 : str = str(result_sum1 % 11 if (result_sum1 % 11) not in [10, 11] else 0)
+
+    result_sum2 : int = sum([ int(i)*(9-e) for e, i in enumerate(pre_cpf, 0) ])
+    b2 : str = str (result_sum2 % 11 if (result_sum2 % 11) not in [10, 11] else 0)
+
+    return "CPF valido" if (b1, b2) == cpf_dvs else "CPF invalido"
+
+
+while True:
+    try:
+        cpf_input : str = input()
+        print(validar_CPF(cpf_input))
+    except EOFError:
+        break
